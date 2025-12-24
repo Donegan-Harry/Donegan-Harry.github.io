@@ -271,20 +271,36 @@ hr {
   }
 }
 
-/* Center images in percolation content */
-.percolation-content img {
+/* Center images and captions in percolation content - AGGRESSIVE */
+.percolation-content .post-content img,
+.percolation-content img,
+.post-content img {
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  max-width: 100%;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  max-width: 100% !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  float: none !important;
+  clear: both !important;
+}
+
+/* Ensure parent paragraphs don't interfere */
+.percolation-content .post-content p,
+.percolation-content p {
+  text-align: left;
+}
+
+/* Center paragraph that contains only an image */
+.percolation-content .post-content p:has(img) {
+  text-align: center !important;
 }
 
 /* Center and style image captions */
+.percolation-content .post-content p > em,
 .percolation-content p > em {
   display: block;
-  text-align: center;
+  text-align: center !important;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   color: #666;
