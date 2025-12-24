@@ -98,55 +98,78 @@ hr {
   margin: 40px 0;
 }
 
-/* Percolation sidebar styles */
-/* Override minima's default styles for percolation pages */
-.page-content.percolation-page {
+/* Percolation sidebar styles - AGGRESSIVE OVERRIDES */
+
+/* Force page-content to allow full width */
+.page-content.percolation-page,
+.page-content.percolation-page .wrapper {
   padding: 0 !important;
   width: 100% !important;
   max-width: none !important;
 }
 
+/* Main wrapper - MUST be flexbox row */
 .percolation-wrapper {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: row !important;
   flex-direction: row !important;
+  -ms-flex-wrap: nowrap !important;
   flex-wrap: nowrap !important;
   gap: 2.5rem;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 30px 15px;
-  align-items: flex-start;
+  -webkit-box-align: start !important;
+  -ms-flex-align: start !important;
+  align-items: flex-start !important;
   box-sizing: border-box;
 }
 
-/* Ensure sidebar stays on the left */
-.percolation-wrapper > * {
-  display: block;
-  clear: none !important;
-}
-
+/* Sidebar - LEFT side, fixed width */
 .percolation-sidebar {
-  order: 0;
-  width: 250px;
-  min-width: 250px;
-  flex-shrink: 0;
+  -webkit-box-ordinal-group: 1 !important;
+  -ms-flex-order: 0 !important;
+  order: 0 !important;
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  -ms-flex-negative: 0 !important;
+  flex-shrink: 0 !important;
+  -ms-flex-positive: 0 !important;
+  flex-grow: 0 !important;
   float: none !important;
-  position: sticky;
+  position: sticky !important;
   top: 80px;
-  height: fit-content;
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
   background: white;
   border: 1px solid #e1e8ed;
   border-radius: 8px;
   padding: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-sizing: border-box !important;
+  margin: 0 !important;
 }
 
+/* Content - RIGHT side, flexible width */
 .percolation-content {
-  order: 1;
-  flex: 1;
-  max-width: 800px;
-  min-width: 0;
+  -webkit-box-ordinal-group: 2 !important;
+  -ms-flex-order: 1 !important;
+  order: 1 !important;
+  -webkit-box-flex: 1 !important;
+  -ms-flex: 1 1 auto !important;
+  flex: 1 1 auto !important;
+  max-width: 800px !important;
+  min-width: 0 !important;
   float: none !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
 }
 
 .percolation-content .post {
@@ -158,6 +181,7 @@ hr {
   padding: 40px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   box-sizing: border-box;
+  margin: 0;
 }
 
 .percolation-content .post-header {
@@ -168,6 +192,7 @@ hr {
   margin-bottom: 0;
 }
 
+/* Navigation styling */
 .percolation-nav h3 {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -197,23 +222,23 @@ hr {
   border-radius: 4px;
   transition: background-color 0.2s, color 0.2s;
   font-size: 0.95em;
-  
-  &:hover {
-    background-color: #ecf0f1;
-    color: #2980b9;
-    text-decoration: none;
-  }
+}
+
+.percolation-nav a:hover {
+  background-color: #ecf0f1;
+  color: #2980b9;
+  text-decoration: none;
 }
 
 .percolation-nav a.active {
   background-color: #3498db;
   color: white;
   font-weight: 500;
-  
-  &:hover {
-    background-color: #2980b9;
-    color: white;
-  }
+}
+
+.percolation-nav a.active:hover {
+  background-color: #2980b9;
+  color: white;
 }
 
 /* Responsive design for mobile */
