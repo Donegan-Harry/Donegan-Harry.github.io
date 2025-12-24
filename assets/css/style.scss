@@ -99,24 +99,27 @@ hr {
 }
 
 /* Percolation sidebar styles */
-.percolation-container {
+.percolation-wrapper {
   display: flex;
   gap: 2.5rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 30px 15px;
+  align-items: flex-start;
 }
 
 .percolation-sidebar {
-  width: 250px;
+  width: 280px;
+  min-width: 280px;
   flex-shrink: 0;
   position: sticky;
-  top: 20px;
+  top: 80px;
   height: fit-content;
   background: white;
   border: 1px solid #e1e8ed;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .percolation-nav h3 {
@@ -179,12 +182,14 @@ hr {
 
 /* Responsive design for mobile */
 @media screen and (max-width: 800px) {
-  .percolation-container {
+  .percolation-wrapper {
     flex-direction: column;
+    padding: 20px 15px;
   }
   
   .percolation-sidebar {
     width: 100%;
+    min-width: unset;
     position: static;
     margin-bottom: 2rem;
   }
