@@ -13,3 +13,5 @@ Welcome to my collection of interconnected projects and explorations.  Each proj
 
 ### 🔬 [Percolation Theory](/projects/percolation/)
 Exploring phase transitions, critical phenomena, and cluster formation in random lattice systems.
+
+[← Back to Home](/)
