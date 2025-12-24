@@ -99,18 +99,28 @@ hr {
 }
 
 /* Percolation sidebar styles */
+/* Override minima's wrapper for percolation pages */
+.percolation-page .wrapper {
+  max-width: none !important;
+}
+
+.percolation-page {
+  padding: 0 !important;
+}
+
 .percolation-wrapper {
   display: flex;
+  flex-direction: row;
   gap: 2.5rem;
-  max-width: calc(800px + 280px + 2.5rem); /* minima's default width + sidebar + gap */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 30px 15px;
   align-items: flex-start;
 }
 
 .percolation-sidebar {
-  width: 280px;
-  min-width: 280px;
+  width: 250px;
+  min-width: 250px;
   flex-shrink: 0;
   position: sticky;
   top: 80px;
@@ -123,9 +133,8 @@ hr {
 }
 
 .percolation-content {
-  width: 800px; /* minima's default content width */
+  flex: 1;
   max-width: 800px;
-  flex-shrink: 0;
 }
 
 .percolation-content .post {
