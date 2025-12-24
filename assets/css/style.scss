@@ -99,29 +99,38 @@ hr {
 }
 
 /* Percolation sidebar styles */
-/* Override minima's wrapper for percolation pages */
-.percolation-page .wrapper {
+/* Override minima's default styles for percolation pages */
+.page-content.percolation-page {
+  padding: 0 !important;
+  width: 100% !important;
   max-width: none !important;
 }
 
-.percolation-page {
-  padding: 0 !important;
-}
-
 .percolation-wrapper {
-  display: flex;
-  flex-direction: row;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   gap: 2.5rem;
-  max-width: 1200px;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 15px;
   align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Ensure sidebar stays on the left */
+.percolation-wrapper > * {
+  display: block;
+  clear: none !important;
 }
 
 .percolation-sidebar {
+  order: 0;
   width: 250px;
   min-width: 250px;
   flex-shrink: 0;
+  float: none !important;
   position: sticky;
   top: 80px;
   height: fit-content;
@@ -133,17 +142,22 @@ hr {
 }
 
 .percolation-content {
+  order: 1;
   flex: 1;
   max-width: 800px;
   min-width: 0;
+  float: none !important;
 }
 
 .percolation-content .post {
+  width: 100%;
+  max-width: 100%;
   background: white;
   border: 1px solid #e1e8ed;
   border-radius: 8px;
   padding: 40px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-sizing: border-box;
 }
 
 .percolation-content .post-header {
