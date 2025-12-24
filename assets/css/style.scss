@@ -107,31 +107,3 @@ hr {
   }
 }
 
-.sidebar {
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  min-width: 200px;
-}
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-.sidebar li {
-  margin-bottom: 10px;
-}
-.sidebar a {
-  color: #2980b9;
-  text-decoration: none;
-}
-.sidebar a:hover {
-  text-decoration: underline;
-}
-main {
-  display: flex;
-  gap: 2rem;
-}
-.content {
-  flex: 1;
-}
