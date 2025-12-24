@@ -16,11 +16,13 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Collections for Julia projects
 collections:
   projects: 
     output: true
     permalink:  /projects/:path/
+  research:
+    output: true
+    permalink: /research/:path/
 
 defaults:
   - scope:
@@ -28,3 +30,8 @@ defaults:
       type: "projects"
     values:
       layout: "projects"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research"
