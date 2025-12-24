@@ -162,10 +162,11 @@ hr {
   -webkit-box-ordinal-group: 2 !important;
   -ms-flex-order: 1 !important;
   order: 1 !important;
-  -webkit-box-flex: 1 !important;
-  -ms-flex: 1 1 auto !important;
-  flex: 1 1 auto !important;
-  max-width: 800px !important;
+  -webkit-box-flex: 0 !important;
+  -ms-flex: 0 1 auto !important;
+  flex: 0 1 auto !important;
+  width: 600px !important;
+  max-width: 600px !important;
   min-width: 0 !important;
   float: none !important;
   box-sizing: border-box !important;
