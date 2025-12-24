@@ -112,6 +112,7 @@ hr {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
+  min-width: 200px;
 }
 .sidebar ul {
   list-style: none;
@@ -126,4 +127,11 @@ hr {
 }
 .sidebar a:hover {
   text-decoration: underline;
+}
+main {
+  display: flex;
+  gap: 2rem;
+}
+.content {
+  flex: 1;
 }
