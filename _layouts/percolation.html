@@ -8,8 +8,8 @@
     {%- include header.html -%}
 
     <main class="page-content percolation-page" aria-label="Content">
-      <div class="percolation-wrapper">
-        <aside class="percolation-sidebar">
+      <div class="percolation-wrapper" style="display: flex; flex-direction: row; gap: 2.5rem; max-width: 1200px; margin: 0 auto; padding: 30px 15px;">
+        <aside class="percolation-sidebar" style="width: 250px; min-width: 250px; flex-shrink: 0;">
           <nav class="percolation-nav">
             <h3>Percolation</h3>
             <ul>
@@ -21,7 +21,7 @@
           </nav>
         </aside>
         
-        <div class="percolation-content">
+        <div class="percolation-content" style="flex: 1; max-width: 800px;">
           <article class="post">
             <header class="post-header">
               <h1 class="post-title">{{ page.title }}</h1>
