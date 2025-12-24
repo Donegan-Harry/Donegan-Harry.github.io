@@ -20,6 +20,6 @@ With the recursion equation provided, in principle we are free to calculate the 
 
 $$P_{\infty}=p(1-u^{z}),$$
 
-which is evidently vanishing when $p<p_{c}$ and $u=1$ is the stable solution. For general $z$ we will not be able to find a closed-form for $P_{\infty}$ and we will must rely on numerical solutions but if $z\leq5$ then the recurssion relation defines a polynomial equation which we can find closed forms for. We of course, as an example, elect to solve the simplest one for $z=3$ where $u=(1-p)+pu^2$ for which we obtain $u=1$ and $u=(1-p)/p$. The first holds for below the critical point $p<p_{c}=1/2$ with $P_{\infty}=0 while above the critical point we have
+which is evidently vanishing when $p<p_{c}$ and $u=1$ is the stable solution. For general $z$ we will not be able to find a closed-form for $P_{\infty}$ and we will must rely on numerical solutions but if $z\leq5$ then the recurssion relation defines a polynomial equation which we can find closed forms for. We of course, as an example, elect to solve the simplest one for $z=3$ where $u=(1-p)+pu^2$ for which we obtain $u=1$ and $u=(1-p)/p$. The first holds for below the critical point $p<p_{c}=1/2$ with $P_{\infty}=0$ while above the critical point we have
 
 $$\frac{P_{\infty}}{p}=1-\frac{(1-p)^3}{p^3}.$$
