@@ -28,7 +28,7 @@ Explore my collection of research projects and explorations:
 
 ## Contact
 
-- **Email:** harry.donegan@kcl.ac.uk *(or your actual email)*
+- **Email:** harry.donegan@kcl.ac.uk 
 - **GitHub:** [@Donegan-Harry](https://github.com/Donegan-Harry)
 - **Institution:** King's College London
 
