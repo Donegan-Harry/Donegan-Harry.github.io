@@ -3,27 +3,4 @@ layout: percolation
 title: Bethe Lattice
 ---
 
-# Bethe Lattice
-
-The Bethe lattice (or Cayley tree) is a fundamental structure in percolation theory that allows for exact analytical solutions.
-
-## Structure
-
-A Bethe lattice is an infinite connected cycle-free graph where:
-- Each vertex has exactly z neighbors (coordination number z)
-- No closed loops exist
-- The structure is self-similar
-
-## Percolation on Bethe Lattice
-
-On a Bethe lattice with coordination number z, the percolation threshold for bond percolation is:
-
-p_c = 1/(z-1)
-
-This provides an exactly solvable model that offers insights into percolation behavior on more complex lattices.
-
-## Advantages
-
-- Exact solutions possible
-- No finite-size effects in thermodynamic limit
-- Provides upper bounds for regular lattices
+Despite the simplicity of the percolation model, it is notoriously difficult to solve exactly on even the simplest lattices (with the trivial exception of one dimension, which we will discuss later). The difficulty is that on a general lattice the presence of loops introduces correlations between sites, destroying statistical independence and placing an exact solution beyond our current means. It should therefore come as no surprise that the lattice on which an exact solution can be derived precludes any loops in its geometry. The Bethe lattice is an infinite connected cycle-free lattice where each vertx has $z$ neighbours ($z$ is known as the coordination number). It can be constructed by starting from a central vertex with $z$ bonds; at the end of each bond, an additional $z-1$ bonds emerge, with the remaining bond connecting back toward the origin. This branching process is continued onwards.
