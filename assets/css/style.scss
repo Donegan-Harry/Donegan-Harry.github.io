@@ -135,6 +135,7 @@ hr {
 .percolation-content {
   flex: 1;
   max-width: 800px;
+  min-width: 0;
 }
 
 .percolation-content .post {
@@ -199,16 +200,6 @@ hr {
     background-color: #2980b9;
     color: white;
   }
-}
-
-.percolation-content {
-  flex: 1;
-  min-width: 0;
-  background: white;
-  border: 1px solid #e1e8ed;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* Responsive design for mobile */
