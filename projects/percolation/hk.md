@@ -47,9 +47,7 @@ function unionAdj(labels, x, y)
 end
 ```
 
-Now we have our functions, the Hoshen-Kopelman algorithm can be presented. Here, we have a 2D percolation array (we take our system to be 2D) and initialise a zero array of the same size. We start at the top left corner; if it is occupied, we assign it label 1, if not we leave it at zero. Next we look at the cell to the right. If it is occupied, we check the cell to its left (the previous cell). If the left neighbour is labelled, we assign the current cell the root of that label; if not, we create a new label. We continue scanning left to right, row by row (a raster scan).
-
-For each occupied site in the interior of the grid, we check both the left and above neighbours. Four cases arise:
+Now we have our functions, the Hoshen-Kopelman algorithm can be presented. Here, we have a 2D percolation array (we take our system to be 2D) and initialise a zero array of the same size.  For each occupied site in the interior of the grid, we check both the left and above neighbours. For boundary sites, we assume the 'would-be' neighbour is unoccupied. Four cases arise:
 - **Both neighbours empty**: Create a new label
 - **Only left occupied**: Inherit the root of the left label
 - **Only above occupied**: Inherit the root of the above label  
