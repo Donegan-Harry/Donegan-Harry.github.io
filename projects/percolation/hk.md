@@ -47,3 +47,55 @@ function unionAdj(labels, x, y)
 end
 ```
 
+Now we have our functions, the Hoshen-Kopelman algorithm can be presented. Here, we have a 2D percolation array (we take our system to be 2D) and initialise a zero array of the same size. We start at the top left corner; if it is occupied, we assign it label 1, if not we leave it at zero. Next we look at the cell to the right. If it is occupied, we check the cell to its left (the previous cell). If the left neighbour is labelled, we assign the current cell the root of that label; if not, we create a new label. We continue scanning left to right, row by row (a raster scan).
+
+For each occupied site in the interior of the grid, we check both the left and above neighbours. Four cases arise:
+- **Both neighbours empty**: Create a new label
+- **Only left occupied**: Inherit the root of the left label
+- **Only above occupied**: Inherit the root of the above label  
+- **Both neighbours occupied**: This is the key case—we perform a union operation to merge the two clusters (which may have different labels but are now discovered to be connected), then assign the current site the root of the merged cluster
+
+After completing the scan, we make a final pass through the label array, updating each label to point directly to its root using the find operation with path compression. This ensures all sites in the same cluster share the same label, giving us our final cluster identification. In Julia, this can be implemented as
+
+'''julia 
+function HK(M)
+    largest_label = 0
+    label = zeros(Int, n_rows, n_columns)
+    labels = collect(0:n_rows*n_columns)
+    
+    for i in 1:n_rows
+        for j in 1:n_columns
+            if M[i, j] == 1
+                # Conditional arguments for boundary cases
+                left = (j > 1) ? label[i, j-1] : 0
+                above = (i > 1) ? label[i-1, j] : 0
+                
+                if left == 0 && above == 0
+                    largest_label += 1
+                    label[i, j] = largest_label
+                    labels[largest_label] = largest_label
+                elseif left != 0 && above == 0
+                    label[i, j] = findAdj(labels, left)
+                elseif left == 0 && above != 0
+                    label[i, j] = findAdj(labels, above)
+                else
+                    unionAdj(labels, left, above)
+                    label[i, j] = findAdj(labels, left)
+                end
+            end
+        end
+    end
+    
+    # Final path compression
+    for i in 1:n_rows
+        for j in 1:n_columns
+            if label[i, j] != 0
+                label[i, j] = findAdj(labels, label[i, j])
+            end
+        end
+    end
+    
+    return label
+end
+'''
+
