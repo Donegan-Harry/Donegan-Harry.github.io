@@ -20,21 +20,23 @@ which produces the following chains 3->4->9 and 2->9 thus we have the set {2, 3,
 Before, we implement this code we can make one significant improvement to the find algorithm which is all to do with flattening the resulting chains that emerge (this is called path compression). For a large array, we can imagine a very large chain emerging which can be a pain to search through. The process is rather simple, with a another loop we traverse a chain until it reaches its root and replace the array values with the root, i.e. it points directly to the root. Althogether the code reads
 
 ```julia
-    function findAdj(labels, x)
-        y = x 
-        while  labels[y] !=y 
-            y = labels[y]
-        end 
-        while labels[x] !=x 
-            z = labels[x]
-            labels[x] = y 
-            x = z 
-        end 
-        return y
-    end
+function findAdj(labels, x)
+    y = x
+    # root recursion
+    while  labels[y] !=y 
+        y = labels[y]
+    end 
+    # path compression
+    while labels[x] !=x 
+        z = labels[x]
+        labels[x] = y 
+        x = z 
+    end 
+    return y
+end
 
-    function unionAdj(labels, x, y)
-        labels[findAdj(x)] = findAdj(y)
-    end
+function unionAdj(labels, x, y)
+    labels[findAdj(x)] = findAdj(y)
+end
 ```
 
