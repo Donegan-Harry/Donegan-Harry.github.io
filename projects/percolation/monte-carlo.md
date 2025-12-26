@@ -11,7 +11,7 @@ where the result can only be trusted within any statistical errors asscoiated wi
 
 $$ \Delta X = \frac{1}{\sqrt{M}} \sqrt{\overline{X^2}-\overline{X}^2}.$$
 
-For example, we can look at the first percolation quantity introduced: the infinite cluster strength $P_{\infty$}. We define $P_{\infty}$ in this instance as the expectation value of $n_{\infty}/N$ where $n_{\infty}$ is the number of sites belonging to the 'infinite' cluster and $N$ is the total number of sites ($L^2$ for the square lattice). Such a quantity requires us to find the 'infinite' cluster which is actually quite simple. We need only find if the opposite edge rows or columns share any common labels and if they do we have find our infinite cluster, the label and the corresponding size. The following functions implement the necessary calculations:
+For example, we can look at the first percolation quantity introduced: the infinite cluster strength $P_{\infty}$. We define $P_{\infty}$ in this instance as the expectation value of $n_{\infty}/N$ where $n_{\infty}$ is the number of sites belonging to the 'infinite' cluster and $N$ is the total number of sites ($L^2$ for the square lattice). Such a quantity requires us to find the 'infinite' cluster which is actually quite simple. We need only find if the opposite edge rows or columns share any common labels and if they do we have find our infinite cluster, the label and the corresponding size. The following functions implement the necessary calculations:
 
 ```julia
 function isPercolating(HK_M)
