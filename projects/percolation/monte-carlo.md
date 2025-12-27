@@ -56,3 +56,11 @@ function PercolationStrength(L, mc_num)
 end
 ```
 
+<p style="text-align: center; margin: 1.5rem 0;">
+  <img src="/assets/images/percolation/Percola.svg" alt="PercolationOrderParameter_Square" style="max-width: 600px;">
+</p>
+
+<p style="text-align: center; color: #666; font-size: 0.95em; font-style: italic; margin-top: 0.5rem;">
+  Figure 3: Percolation strength on a square lattice of length $L=250$ calculated using Monte-Carlo methods with $M=1000$ samples taken for each $p$ value.
+</p>
+
