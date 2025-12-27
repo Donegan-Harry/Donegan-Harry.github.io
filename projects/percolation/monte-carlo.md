@@ -14,26 +14,45 @@ $$ \Delta X = \frac{1}{\sqrt{M}} \sqrt{\overline{X^2}-\overline{X}^2}.$$
 For example, we can look at the first percolation quantity introduced: the infinite cluster strength $P_{\infty}$. We define $P_{\infty}$ in this instance as the expectation value of $n_{\infty}/N$ where $n_{\infty}$ is the number of sites belonging to the 'infinite' cluster and $N$ is the total number of sites ($L^2$ for the square lattice). Such a quantity requires us to find the 'infinite' cluster which is actually quite simple. We need only find if the opposite edge rows or columns share any common labels and if they do we have find our infinite cluster, the label and the corresponding size. The following functions implement the necessary calculations:
 
 ```julia
-function isPercolating(HK_M)
+function isPercolating(M)
     # Retrieve edges of system
-    top_edge = HK_M[1, :]
-    bottom_edge = Set(HK_M[end, :])
-    left_edge = Set(HK_M[:, 1])
-    right_edge = HK_M[:, end]
+    top_edge = M[1, :]
+    bottom_edge = Set(M[end, :])
+    left_edge = Set(M[:, 1])
+    right_edge = M[:, end]
 
-    # Check if cluster spans system top to bottom
-    vertical = findfirst(k -> k in bottom_edge, top_edge)
+    # Check if cluster spans system top to bottom (exclude zeros)
+    vertical = findfirst(k -> k != 0 && k in bottom_edge, top_edge)
     if vertical !== nothing 
         return true, top_edge[vertical] 
     end 
 
-    # Check if clcuster spans system left to right
-    horizontal = findfirst(k -> k in left_edge, right_edge)
+    # Check if cluster spans system left to right (exclude zeros)
+    horizontal = findfirst(k -> k != 0 && k in left_edge, right_edge)
     if horizontal !== nothing 
         return true, right_edge[horizontal] 
     else 
         return false, nothing
     end
+end
+
+
+function PercolationStrength(L, mc_num)
+    p = range(0, 1, 100)
+    order = zeros(length(p))
+    order_uncertainity = zeros(length(p))
+    for i in 1:length(p)
+        mc_values = zeros(mc_num)
+        for j in 1:mc_num
+            M = SquareLattice(L, p[i])
+            HK_M = HK(M)
+            phase, cluster_id = isPercolating(HK_M)
+            mc_values[j] = (cluster_id === nothing) ? 0 : count(==(cluster_id), HK_M) / L^2
+        end
+        order[i] = mean(mc_values)
+        order_uncertainity[i] = std(mc_values)
+    end
+    return order, order_uncertainity
 end
 ```
 
