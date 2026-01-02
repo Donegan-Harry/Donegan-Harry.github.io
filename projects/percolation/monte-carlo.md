@@ -56,7 +56,7 @@ function PercolationStrength(L, mc_num)
 end
 ```
 
-Running the above code for a square lattice, we compute a representative example (Figure 3) of the percolation order parameter. At current sizes, we find that the threshold for site percolation on a square lattice is $p_{c}\approx 0.58$. Note that the transition appears gradual rather than sharp - this is a finite-size effect. At infinite system size, P∞ would jump discontinuously from 0 to a finite value at p_c. The most accurate determination on this threshold is currently $p_{c} = 0.592 746 050 792 10(2)$ so our simulation is clearly in the right ball park. We of course do not have a very large system $L=250$ is very far from infinite but we will later discuss some other methods to calculate this threshold.
+Running the above code for a square lattice, we compute a representative example (Figure 3) of the percolation order parameter. At current sizes, we find that the threshold for site percolation on a square lattice is $p_{c}\approx 0.58$. Note that the transition appears gradual rather than sharp which is a finite-size effect. At infinite system size, $P_{\infty}$ would jump discontinuously from 0 to a finite value at $p_c$. The most accurate determination on this threshold is currently $p_{c} = 0.592 746 050 792 10(2)$ so our simulation is clearly in the right ball park. We of course do not have a very large system, $L=250$ is very far from infinite but we will later discuss some other methods to calculate this threshold.
 
 <p style="text-align: center; margin: 1.5rem 0;">
   <img src="/assets/images/percolation/PercolationOrderParameter_Square.svg" alt="PercolationOrderParameter_Square" style="max-width: 600px;">
