@@ -50,7 +50,7 @@ function PercolationStrength(L, mc_num)
             mc_values[j] = (cluster_id === nothing) ? 0 : count(==(cluster_id), HK_M) / L^2
         end
         order[i] = mean(mc_values)
-        order_uncertainity[i] = std(mc_values)
+        order_uncertainity[i] = std(mc_values)/sqrt(mc_num)
     end
     return order, order_uncertainity
 end
