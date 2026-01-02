@@ -9,7 +9,7 @@ $$\langle X \rangle \approx \overline{X} = \frac{1}{M}\sum_{i} X_{i}, $$
 
 where the result can only be trusted within any statistical errors given by the standard error in the mean
 
-$$ \Delta X = \frac{1}{M} \sqrt{\overline{X^2}-\overline{X}^2}.$$
+$$ \Delta X = \frac{1}{sqrt{M}} \sqrt{\overline{X^2}-\overline{X}^2}.$$
 
 For example, we can look at the first percolation quantity introduced: the infinite cluster strength $P_{\infty}$. We define $P_{\infty}$ in this instance as the expectation value of $n_{\infty}/N$ where $n_{\infty}$ is the number of sites belonging to the 'infinite' cluster and $N$ is the total number of sites ($L^2$ for the square lattice). Such a quantity requires us to find the 'infinite' cluster which is actually quite simple. We need only find if the opposite edge rows or columns share any common labels and if they do we have found our infinite cluster, the label and the corresponding size. The following functions implement the necessary calculations:
 
@@ -98,7 +98,7 @@ function MeanClusterSize(L, mc_num)
 end
 ```
 
-As we run this code on the square lattice (Figure 4), we see the appearance of a large spike in the mean cluster size as the system approaches the percolation threshold. 
+Running this code on the square lattice (Figure 4), we see the appearance of a large spike in the mean cluster size as the system approaches the percolation threshold. For those familiar with the canonical phase transitions in magnetic models, e.g. Ising model, the mean cluster size plays the role of the susceptibility in this type of transition.
 
 <p style="text-align: center; margin: 1.5rem 0;">
   <img src="/assets/images/percolation/MeanClusterSize_Square.svg" alt="MeanClusterSize_Square" style="max-width: 600px;">
