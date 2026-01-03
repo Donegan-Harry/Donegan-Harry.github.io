@@ -26,7 +26,7 @@ $$ g(r) = \frac{1}{p} \langle n(0) \cdot n(\mathbf{r}) \cdot \mathbb{1}_{\text{s
 
 where n(x) = 1 if site x is occupied and 0 otherwise, and the indicator function ensures both sites belong to the same cluster. The correlation length sets the fundamental length scale for the percolation transition, away from the critical point we expect the correlation length to be small and the correlation length to decay exponentially
 
-$$g(r)\propto\exp\left(\frac{r}{\epsilon}\right)$$ 
+$$g(r)\propto\exp\left(\frac{r}{\xi}\right)$$ 
 
 as the clusters appear isolated from eachother and the connectedness is low. Of course at the transition point, the entire system is connected and we expect that $\xi\rightarrow\infty$ as the cluster spans everywhere.
 
