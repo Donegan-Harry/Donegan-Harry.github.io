@@ -30,7 +30,7 @@ $$g(r)\propto\exp\left(-\frac{r}{\xi}\right)$$
 
 as the clusters appear isolated from eachother and the connectedness is low. Of course at the transition point, the entire system is connected and we expect that $\xi\rightarrow\infty$ as the cluster spans everywhere.
 
-Near the percolation threshold, the system exhibits a continuous phase transition which is characterised by scale invariance. The system looks the same on all length scales. A most remarkable feature of this transition is that the observables that we have mentioned all exhibit power-law behaviour governed by **critical exponents**. We find that in the vicnity of $p_{c}$ the order paramter scales as $P_{\infty}\sim(p-p_{c})^{\beta}$, and the susceptibility and correlation lengths diverge as $S\sim|p-p_{c}|^{-\gamma}$ and $\eta\sim|p-p_{c}|^{\eta}.$ The regime where this occurs is known as criticality and other quantities exhbit power-law bhevaiour with the correlation length decaying in power law fashion as 
+Near the percolation threshold, the system exhibits a continuous phase transition which is characterised by scale invariance. The system looks the same on all length scales. A most remarkable feature of this transition is that the observables that we have mentioned all exhibit power-law behaviour governed by **critical exponents**. We find that in the vicnity of $p_{c}$ the order paramter scales as $P_{\infty}\sim(p-p_{c})^{\beta}$, and the susceptibility and correlation lengths diverge as $S\sim\vert p-p_{c}\vert^{-\gamma}$ and $\eta\sim\vert p-p_{c}\vert^{\eta}.$ The regime where this occurs is known as criticality and other quantities exhbit power-law behaviour with the correlation length decaying in power law fashion as 
 
 $$g(r)\sim r^{-(d-2+\eta)}$$
 
