@@ -20,7 +20,7 @@ This quantity is zero in the non-percolating phase ($p < p_{c}$) and positive in
 
 ## Susceptibility: Mean Cluster Size $S$
 
-As the occupation probability increases from zero, clusters consisting of nearest-neighbor connections begin to form. These clusters have varying sizes $s$ and can be characterszed by their number densities $n_{s}$, the number of clusters of size $s$ per lattice site. A fundamental quantity associated with the transition is the **mean cluster size** (also called the susceptibility)
+As the occupation probability increases from zero, clusters consisting of nearest-neighbor connections begin to form. These clusters have varying sizes $s$ and can be characterised by their number densities $n_{s}$, the number of clusters of size $s$ per lattice site. A fundamental quantity associated with the transition is the **mean cluster size** (also called the susceptibility)
 
 $$ S = \frac{\sum_{s\neq\infty}s^2n_{s}}{\sum_{s\neq\infty}s^2n_{s}}. $$
 
