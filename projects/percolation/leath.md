@@ -71,3 +71,11 @@ function Leath(L, p)
     return Lattice
 end
 ```
+A charaacteristic fractal pattern formed by this method is shown below
+
+<p style="text-align: center; margin: 1.5rem 0;">
+  <img src="/assets/images/percolation/Leath.svg" alt="Leath" style="max-width: 600px;">
+</p>
+<p style="text-align: center; color: #666; font-size: 0.95em; font-style: italic; margin-top: 0.5rem;">
+  Figure 5: Single cluster formed on 500x500 square grid by the Leath Algorithm at p=0.6 (near the percolation threshold).
+</p>
